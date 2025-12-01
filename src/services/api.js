@@ -2,13 +2,12 @@ import axios from 'axios'
 import { useAuthStore } from '../stores/auth'
 
 const api = axios.create({
-  baseURL: 'http://localhost:8080',  // ← CONECTADO AL BACKEND
+  baseURL: 'https://b6-40404866.byethost6.com/backend/api',
   headers: {
     'Content-Type': 'application/json'
   }
 })
 
-// Interceptor para agregar el token a las peticiones
 api.interceptors.request.use(
   (config) => {
     const authStore = useAuthStore()
@@ -22,7 +21,6 @@ api.interceptors.request.use(
   }
 )
 
-// Interceptor para manejar errores de autenticación
 api.interceptors.response.use(
   (response) => response,
   (error) => {

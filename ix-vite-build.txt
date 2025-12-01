@@ -1,0 +1,1 @@
+Fix: Using npx vite build instead of npm run build

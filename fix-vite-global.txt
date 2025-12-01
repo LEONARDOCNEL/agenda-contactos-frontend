@@ -1,0 +1,1 @@
+Fix: Installing vite globally before build
